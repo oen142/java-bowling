@@ -1,4 +1,4 @@
-package qna.service;
+package step1.qna.service;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -6,8 +6,8 @@ import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnitRunner;
-import qna.CannotDeleteException;
-import qna.domain.*;
+import step1.qna.CannotDeleteException;
+import step1.qna.domain.*;
 
 import java.time.LocalDateTime;
 import java.util.Arrays;
