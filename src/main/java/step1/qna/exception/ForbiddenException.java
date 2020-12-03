@@ -1,4 +1,4 @@
-package step1.qna;
+package step1.qna.exception;
 
 public class ForbiddenException extends RuntimeException{
     public ForbiddenException() {
