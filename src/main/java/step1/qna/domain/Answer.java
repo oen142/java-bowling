@@ -1,7 +1,7 @@
 package step1.qna.domain;
 
-import step1.qna.NotFoundException;
-import step1.qna.UnAuthorizedException;
+import step1.qna.exception.NotFoundException;
+import step1.qna.exception.UnAuthorizedException;
 
 import javax.persistence.*;
 
@@ -20,8 +20,7 @@ public class Answer extends AbstractEntity {
 
     private boolean deleted = false;
 
-    public Answer() {
-    }
+    protected Answer() {}
 
     public Answer(User writer, Question question, String contents) {
         this(null, writer, question, contents);
@@ -30,11 +29,11 @@ public class Answer extends AbstractEntity {
     public Answer(Long id, User writer, Question question, String contents) {
         super(id);
 
-        if(writer == null) {
+        if (writer == null) {
             throw new UnAuthorizedException();
         }
 
-        if(question == null) {
+        if (question == null) {
             throw new NotFoundException();
         }
 

@@ -1,6 +1,6 @@
 package step1.qna.domain;
 
-import step1.qna.UnAuthorizedException;
+import step1.qna.exception.UnAuthorizedException;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -21,8 +21,7 @@ public class User extends AbstractEntity {
 
     private String email;
 
-    public User() {
-    }
+    protected User() {}
 
     public User(String userId, String password, String name, String email) {
         this(null, userId, password, name, email);
@@ -117,4 +116,5 @@ public class User extends AbstractEntity {
     public String toString() {
         return "User [userId=" + userId + ", password=" + password + ", name=" + name + ", email=" + email + "]";
     }
+
 }
