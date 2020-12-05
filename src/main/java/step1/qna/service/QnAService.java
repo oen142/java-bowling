@@ -4,8 +4,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import step1.qna.CannotDeleteException;
-import step1.qna.NotFoundException;
+import step1.qna.exception.CannotDeleteException;
+import step1.qna.exception.NotFoundException;
 import step1.qna.domain.*;
 
 import javax.annotation.Resource;

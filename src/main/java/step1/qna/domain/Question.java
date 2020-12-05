@@ -27,16 +27,7 @@ public class Question extends AbstractEntity {
 
     protected Question() {}
 
-    public Question(String title, String contents) {
-        this.title = title;
-        this.contents = contents;
-    }
 
-    public Question(long id, String title, String contents) {
-        super(id);
-        this.title = title;
-        this.contents = contents;
-    }
 
     public String getTitle() {
         return title;
