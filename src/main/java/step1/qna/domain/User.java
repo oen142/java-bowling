@@ -23,17 +23,15 @@ public class User extends AbstractEntity {
 
     protected User() {}
 
-    public User(String userId, String password, String name, String email) {
-        this(null, userId, password, name, email);
+    private User(UserBuilder builder) {
+        super(null);
+        this.userId = builder.userId;
+        this.password = builder.password;
+        this.name = builder.name;
+        this.email = builder.email;
     }
 
-    public User(Long id, String userId, String password, String name, String email) {
-        super(id);
-        this.userId = userId;
-        this.password = password;
-        this.name = name;
-        this.email = email;
-    }
+
 
     public String getUserId() {
         return userId;
@@ -117,4 +115,35 @@ public class User extends AbstractEntity {
         return "User [userId=" + userId + ", password=" + password + ", name=" + name + ", email=" + email + "]";
     }
 
+    public static class UserBuilder {
+
+        private String userId;
+        private String password;
+        private String name;
+        private String email;
+
+        public UserBuilder buildUserId(String userId) {
+            this.userId = userId;
+            return this;
+        }
+
+        public UserBuilder buildPassWord(String password) {
+            this.password = password;
+            return this;
+        }
+
+        public UserBuilder buildName(String name) {
+            this.name = name;
+            return this;
+        }
+
+        public UserBuilder buildEmail(String email) {
+            this.email = email;
+            return this;
+        }
+
+        public User build() {
+            return new User(this);
+        }
+    }
 }
