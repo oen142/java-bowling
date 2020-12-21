@@ -57,6 +57,9 @@ public class Frames {
     public int getCurrentFramePosition() {
         return currentFramePosition;
     }
+    public boolean hasScoreTurn(int index){
+        return !frames.get(index).hasScoreTurn();
+    }
 
     public boolean isFinished() {
         return !this.frames.get(LAST_FRAME_INDEX).hasScoreTurn();

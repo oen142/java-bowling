@@ -41,5 +41,8 @@ public class Bowling {
     public boolean isGameFinished() {
         return frames.isFinished();
     }
+    public boolean isFrameFinished(int frameIndex){
+        return frames.hasScoreTurn(frameIndex);
+    }
 
 }
