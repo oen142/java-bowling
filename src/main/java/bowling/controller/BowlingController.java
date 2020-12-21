@@ -25,24 +25,10 @@ public class BowlingController {
         BowlingGames bowlingGames = BowlingGames.of(bowlings);
 
 
-        int frameNumber = 0;
-        int peopleIndex = 0;
-        Bowling bowling = bowlingGames.getBowling(peopleIndex);
         while (!bowlingGames.isBowlingGameEnd()) {
-
-            Point pointPitch = InputView.inputPitchBowl(bowling.getPlayerName());
-            bowling.pitch(pointPitch);
+            Point pointPitch = InputView.inputPitchBowl(bowlingGames.getPlayerName());
+            bowlingGames.pitch(pointPitch);
             OutputView.printResult(bowlingGames);
-
-            if (bowling.isFrameFinished(frameNumber)) {
-                peopleIndex++;
-                if (bowlingGames.getParticipationPeopleCount() == peopleIndex) {
-                    peopleIndex = 0;
-                }
-                bowling = bowlingGames.getBowling(peopleIndex);
-                continue;
-            }
-            frameNumber++;
 
         }
     }

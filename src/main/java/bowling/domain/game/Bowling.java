@@ -26,9 +26,6 @@ public class Bowling {
         return player.getName();
     }
 
-    public int getCurrentFrameNumber() {
-        return frames.getCurrentFramePosition();
-    }
 
     public void pitch(Point pointPitch) {
         frames.pitch(pointPitch);
